@@ -24,11 +24,14 @@
 		C7052E341A1D3EB20059C9A6 /* CoredataSortingPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7052E331A1D3EB20059C9A6 /* CoredataSortingPhotosTests.m */; };
 		C7052E3E1A1D40300059C9A6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */; };
 		C7052E411A1D4DA00059C9A6 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */; };
-		C7052E441A1D56C30059C9A6 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = C7052E431A1D56C30059C9A6 /* Album.m */; };
+		C78948B41A2D117100F84BC4 /* RWPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */; };
 		C7A983311A1E7D2600FE4334 /* CoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983301A1E7D2500FE4334 /* CoredataHelper.m */; };
 		C7A983341A1E80C700FE4334 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */; };
 		C7A983391A1E8FAD00FE4334 /* Astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7A983381A1E8FAD00FE4334 /* Astronaut.jpg */; };
 		C7A9833C1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */; };
+		C7BFA3821A2BCBAF003871F2 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BFA3811A2BCBAF003871F2 /* Album.m */; };
+		C7BFA3851A2BCBAF003871F2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BFA3841A2BCBAF003871F2 /* Photo.m */; };
+		C7BFA3891A2BD56A003871F2 /* PictureDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BFA3881A2BD56A003871F2 /* PictureDataTransformer.m */; };
 		C7DB7F011A1EF51200869922 /* Jamaica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7DB7F001A1EF51200869922 /* Jamaica.jpg */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +67,8 @@
 		C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		C7052E3F1A1D4DA00059C9A6 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
-		C7052E421A1D56C30059C9A6 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		C7052E431A1D56C30059C9A6 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		C78948B21A2D117100F84BC4 /* RWPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWPhotoViewController.h; path = ../RWPhotoViewController.h; sourceTree = "<group>"; };
+		C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWPhotoViewController.m; path = ../RWPhotoViewController.m; sourceTree = "<group>"; };
 		C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoredataHelper.h; sourceTree = "<group>"; };
 		C7A983301A1E7D2500FE4334 /* CoredataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoredataHelper.m; sourceTree = "<group>"; };
 		C7A983321A1E80C700FE4334 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
@@ -73,6 +76,12 @@
 		C7A983381A1E8FAD00FE4334 /* Astronaut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Astronaut.jpg; path = ../../../Astronaut.jpg; sourceTree = "<group>"; };
 		C7A9833A1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		C7BFA3801A2BCBAF003871F2 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Album.h; path = ../Album.h; sourceTree = "<group>"; };
+		C7BFA3811A2BCBAF003871F2 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Album.m; path = ../Album.m; sourceTree = "<group>"; };
+		C7BFA3831A2BCBAF003871F2 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../Photo.h; sourceTree = "<group>"; };
+		C7BFA3841A2BCBAF003871F2 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../Photo.m; sourceTree = "<group>"; };
+		C7BFA3871A2BD56A003871F2 /* PictureDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureDataTransformer.h; path = ../PictureDataTransformer.h; sourceTree = "<group>"; };
+		C7BFA3881A2BD56A003871F2 /* PictureDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureDataTransformer.m; path = ../PictureDataTransformer.m; sourceTree = "<group>"; };
 		C7DB7F001A1EF51200869922 /* Jamaica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jamaica.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */,
+				C78948B21A2D117100F84BC4 /* RWPhotoViewController.h */,
+				C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */,
 				C7A9833A1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.h */,
 				C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */,
 				C7A983321A1E80C700FE4334 /* MyCollectionViewController.h */,
@@ -147,8 +158,7 @@
 				C7A983301A1E7D2500FE4334 /* CoredataHelper.m */,
 				C7052E1F1A1D3EB20059C9A6 /* Images.xcassets */,
 				C7052E1C1A1D3EB20059C9A6 /* CoredataSortingPhotos.xcdatamodeld */,
-				C7052E421A1D56C30059C9A6 /* Album.h */,
-				C7052E431A1D56C30059C9A6 /* Album.m */,
+				C7BFA3861A2BCC6C003871F2 /* CoreData */,
 				C7052E111A1D3EB20059C9A6 /* Supporting Files */,
 			);
 			path = CoredataSortingPhotos;
@@ -185,6 +195,19 @@
 				C7052E301A1D3EB20059C9A6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7BFA3861A2BCC6C003871F2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C7BFA3871A2BD56A003871F2 /* PictureDataTransformer.h */,
+				C7BFA3881A2BD56A003871F2 /* PictureDataTransformer.m */,
+				C7BFA3811A2BCBAF003871F2 /* Album.m */,
+				C7BFA3831A2BCBAF003871F2 /* Photo.h */,
+				C7BFA3841A2BCBAF003871F2 /* Photo.m */,
+				C7BFA3801A2BCBAF003871F2 /* Album.h */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,14 +309,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7BFA3891A2BD56A003871F2 /* PictureDataTransformer.m in Sources */,
 				C7A9833C1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m in Sources */,
 				C7052E171A1D3EB20059C9A6 /* main.m in Sources */,
 				C7052E411A1D4DA00059C9A6 /* AlbumTableViewController.m in Sources */,
+				C7BFA3851A2BCBAF003871F2 /* Photo.m in Sources */,
+				C7BFA3821A2BCBAF003871F2 /* Album.m in Sources */,
 				C7A983311A1E7D2600FE4334 /* CoredataHelper.m in Sources */,
 				C7052E1B1A1D3EB20059C9A6 /* RWAppDelegate.m in Sources */,
 				C7A983341A1E80C700FE4334 /* MyCollectionViewController.m in Sources */,
-				C7052E441A1D56C30059C9A6 /* Album.m in Sources */,
 				C7052E1E1A1D3EB20059C9A6 /* CoredataSortingPhotos.xcdatamodeld in Sources */,
+				C78948B41A2D117100F84BC4 /* RWPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
