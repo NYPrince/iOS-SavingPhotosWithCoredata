@@ -8,6 +8,7 @@
 
 #import "RWPhotoViewController.h"
 #import "Photo.h"
+#import "RWFiltersCollectionViewController.h"
 
 @interface RWPhotoViewController ()
 
@@ -41,6 +42,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqual:@"Filter Segue"]) {
+        if([segue.destinationViewController isKindOfClass:[RWFiltersCollectionViewController class]]){
+            RWFiltersCollectionViewController *targetViewController = segue.destinationViewController;
+            targetViewController.photo = self.photo;
+        }
+    }
+    
+}
 
 - (IBAction)addFilterBtn:(id)sender {
 }

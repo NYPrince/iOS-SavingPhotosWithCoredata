@@ -24,6 +24,7 @@
 		C7052E341A1D3EB20059C9A6 /* CoredataSortingPhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7052E331A1D3EB20059C9A6 /* CoredataSortingPhotosTests.m */; };
 		C7052E3E1A1D40300059C9A6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */; };
 		C7052E411A1D4DA00059C9A6 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */; };
+		C715A4291A30E6A200BA6C44 /* RWFiltersCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C715A4281A30E6A200BA6C44 /* RWFiltersCollectionViewController.m */; };
 		C78948B41A2D117100F84BC4 /* RWPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */; };
 		C7A983311A1E7D2600FE4334 /* CoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983301A1E7D2500FE4334 /* CoredataHelper.m */; };
 		C7A983341A1E80C700FE4334 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */; };
@@ -67,6 +68,8 @@
 		C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		C7052E3F1A1D4DA00059C9A6 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
+		C715A4271A30E6A200BA6C44 /* RWFiltersCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWFiltersCollectionViewController.h; sourceTree = "<group>"; };
+		C715A4281A30E6A200BA6C44 /* RWFiltersCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWFiltersCollectionViewController.m; sourceTree = "<group>"; };
 		C78948B21A2D117100F84BC4 /* RWPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWPhotoViewController.h; path = ../RWPhotoViewController.h; sourceTree = "<group>"; };
 		C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWPhotoViewController.m; path = ../RWPhotoViewController.m; sourceTree = "<group>"; };
 		C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoredataHelper.h; sourceTree = "<group>"; };
@@ -146,16 +149,16 @@
 			isa = PBXGroup;
 			children = (
 				C7052E3D1A1D40300059C9A6 /* Storyboard.storyboard */,
+				C715A4271A30E6A200BA6C44 /* RWFiltersCollectionViewController.h */,
+				C715A4281A30E6A200BA6C44 /* RWFiltersCollectionViewController.m */,
 				C78948B21A2D117100F84BC4 /* RWPhotoViewController.h */,
 				C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */,
 				C7A9833A1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.h */,
 				C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */,
-				C7A983321A1E80C700FE4334 /* MyCollectionViewController.h */,
-				C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */,
+				C798BC7F1A32161900532082 /* CollectionView */,
 				C7052E3F1A1D4DA00059C9A6 /* AlbumTableViewController.h */,
 				C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */,
-				C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */,
-				C7A983301A1E7D2500FE4334 /* CoredataHelper.m */,
+				C798BC7E1A3215C300532082 /* Coredata */,
 				C7052E1F1A1D3EB20059C9A6 /* Images.xcassets */,
 				C7052E1C1A1D3EB20059C9A6 /* CoredataSortingPhotos.xcdatamodeld */,
 				C7BFA3861A2BCC6C003871F2 /* CoreData */,
@@ -195,6 +198,24 @@
 				C7052E301A1D3EB20059C9A6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C798BC7E1A3215C300532082 /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */,
+				C7A983301A1E7D2500FE4334 /* CoredataHelper.m */,
+			);
+			name = Coredata;
+			sourceTree = "<group>";
+		};
+		C798BC7F1A32161900532082 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C7A983321A1E80C700FE4334 /* MyCollectionViewController.h */,
+				C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		C7BFA3861A2BCC6C003871F2 /* CoreData */ = {
@@ -320,6 +341,7 @@
 				C7A983341A1E80C700FE4334 /* MyCollectionViewController.m in Sources */,
 				C7052E1E1A1D3EB20059C9A6 /* CoredataSortingPhotos.xcdatamodeld in Sources */,
 				C78948B41A2D117100F84BC4 /* RWPhotoViewController.m in Sources */,
+				C715A4291A30E6A200BA6C44 /* RWFiltersCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
