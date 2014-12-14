@@ -15,6 +15,7 @@
 @interface RWFiltersCollectionViewController ()
 
 @property(nonatomic, strong)NSMutableArray *filters;
+@property(strong, nonatomic)CIContext *context;
 
 @end
 
@@ -30,16 +31,21 @@ static NSString * const reuseIdentifier = @"Cell";
     return _filters;
 }
 
+
+-(CIContext *)context{
+    
+    if(!_context )_context = [CIContext contextWithOptions:nil];
+    
+    return _context;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.filters = [[[self class] photofilters] mutableCopy];
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Do any additional setup after loading the view.
 }
 
 
@@ -47,6 +53,54 @@ static NSString * const reuseIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -helpers
++ (NSArray *)photofilters{
+    
+    CIFilter *sepia = [CIFilter filterWithName:@"CISepiaTone" keysAndValues:nil];
+    
+    CIFilter *blur = [CIFilter filterWithName:@"CIGaussianBlur" keysAndValues: nil];
+    
+    
+    CIFilter *colorClamp = [CIFilter filterWithName:@"CIColorClamp" keysAndValues:@"inputMaxComponents",[CIVector vectorWithX:0.9 Y:0.9 Z:0.9 W:0.9],@"inputMinComponents",[CIVector vectorWithX:0.2 Y:0.2 Z:0.2 W:0.2], nil];
+    
+    CIFilter *instants = [CIFilter filterWithName:@"CIPhotoEffectInstant" keysAndValues: nil];
+    
+    CIFilter *noir = [CIFilter filterWithName:@"CIPhotoEffectNoir" keysAndValues: nil];
+    
+    CIFilter *vignette = [CIFilter filterWithName:@"CIVignetteEffect" keysAndValues: nil];
+    
+    CIFilter *colorControls = [CIFilter filterWithName:@"CIColorControls" keysAndValues:kCIInputSaturationKey,@0.5, nil];
+    
+    CIFilter *transfer = [CIFilter filterWithName:@"CIPhotoEffectTransfer" keysAndValues: nil];
+    
+    CIFilter *unsharpen = [CIFilter filterWithName:@"CIUnsharpMask" keysAndValues: nil];
+    
+    CIFilter *monochrome = [CIFilter filterWithName:@"CIColorMonochrome" keysAndValues: nil];
+    
+    NSArray *allFilters = @[sepia, blur, colorClamp, instants, noir, vignette, transfer, unsharpen, monochrome, colorControls];
+    
+    return allFilters;
+    
+}
+
+-(UIImage *)filteredImageFromImage:(UIImage *)image andFilter:(CIFilter *)filter{
+    
+    CIImage *unfilteredImage = [[CIImage alloc]initWithCGImage:image.CGImage];
+    
+    [filter setValue:unfilteredImage forKey:kCIInputImageKey];
+    CIImage *filteredImage = [filter outputImage];
+    
+    CGRect extent = [filteredImage extent];
+    CGImageRef cgImage = [self.context createCGImage:unfilteredImage fromRect:extent];
+    
+    UIImage *finalImage = [UIImage imageWithCGImage:cgImage];
+    //NSLog(@"Check out all the data%@", UIImagePNGRepresentation(finalImage));
+    
+    return finalImage;
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -67,7 +121,20 @@ static NSString * const reuseIdentifier = @"Cell";
     RWPhotoCollectionViewCell *cell = [ collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
-    cell.imageView.image = self.photo.image;
+    
+    dispatch_queue_t filterQueue = dispatch_queue_create("filter queue", NULL);
+    
+    dispatch_async(filterQueue, ^{
+        
+        UIImage *filterImage = [self filteredImageFromImage:self.photo.image andFilter:self.filters[indexPath.row]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            cell.imageView.image = filterImage;
+        });
+    });
+    
+    
     return cell;
 }
 
@@ -77,8 +144,8 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    
+    return 1;
 }
 
 
@@ -90,33 +157,19 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    RWPhotoCollectionViewCell * selectedCell = (RWPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    self.photo.image = selectedCell.imageView.image;
+    
+    NSError *error = nil;
+    
+    if (![[self.photo managedObjectContext]save:&error] ){
+        NSLog(@"%@", error);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

@@ -10,6 +10,8 @@
 	<string>CoredataSortingPhotos</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>31822857123902BA98CC144F7675D95EFA9BF4C2</key>
+		<string>https://github.com/NYPrince/iOS-Projects.git</string>
 		<key>8C367EB9A2D0FBA1B5B06CB9272A1B59AF30F892</key>
 		<string>https://github.com/NYPrince/iOS-Projects.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>CoredataSortingPhotos.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>31822857123902BA98CC144F7675D95EFA9BF4C2</key>
+		<string>../../..</string>
 		<key>8C367EB9A2D0FBA1B5B06CB9272A1B59AF30F892</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>8C367EB9A2D0FBA1B5B06CB9272A1B59AF30F892</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31822857123902BA98CC144F7675D95EFA9BF4C2</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

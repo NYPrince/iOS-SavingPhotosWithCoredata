@@ -28,7 +28,6 @@
 		C78948B41A2D117100F84BC4 /* RWPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78948B31A2D117100F84BC4 /* RWPhotoViewController.m */; };
 		C7A983311A1E7D2600FE4334 /* CoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983301A1E7D2500FE4334 /* CoredataHelper.m */; };
 		C7A983341A1E80C700FE4334 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */; };
-		C7A983391A1E8FAD00FE4334 /* Astronaut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7A983381A1E8FAD00FE4334 /* Astronaut.jpg */; };
 		C7A9833C1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */; };
 		C7BFA3821A2BCBAF003871F2 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BFA3811A2BCBAF003871F2 /* Album.m */; };
 		C7BFA3851A2BCBAF003871F2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BFA3841A2BCBAF003871F2 /* Photo.m */; };
@@ -76,7 +75,6 @@
 		C7A983301A1E7D2500FE4334 /* CoredataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoredataHelper.m; sourceTree = "<group>"; };
 		C7A983321A1E80C700FE4334 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		C7A983331A1E80C700FE4334 /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
-		C7A983381A1E8FAD00FE4334 /* Astronaut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Astronaut.jpg; path = ../../../Astronaut.jpg; sourceTree = "<group>"; };
 		C7A9833A1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		C7BFA3801A2BCBAF003871F2 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Album.h; path = ../Album.h; sourceTree = "<group>"; };
@@ -156,9 +154,7 @@
 				C7A9833A1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.h */,
 				C7A9833B1A1EE0BB00FE4334 /* RWPhotoCollectionViewCell.m */,
 				C798BC7F1A32161900532082 /* CollectionView */,
-				C7052E3F1A1D4DA00059C9A6 /* AlbumTableViewController.h */,
-				C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */,
-				C798BC7E1A3215C300532082 /* Coredata */,
+				C7D0F9B21A325C4B00EF1940 /* Album */,
 				C7052E1F1A1D3EB20059C9A6 /* Images.xcassets */,
 				C7052E1C1A1D3EB20059C9A6 /* CoredataSortingPhotos.xcdatamodeld */,
 				C7BFA3861A2BCC6C003871F2 /* CoreData */,
@@ -170,7 +166,6 @@
 		C7052E111A1D3EB20059C9A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C7A983381A1E8FAD00FE4334 /* Astronaut.jpg */,
 				C7052E191A1D3EB20059C9A6 /* RWAppDelegate.h */,
 				C7DB7F001A1EF51200869922 /* Jamaica.jpg */,
 				C7052E1A1A1D3EB20059C9A6 /* RWAppDelegate.m */,
@@ -200,15 +195,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C798BC7E1A3215C300532082 /* Coredata */ = {
-			isa = PBXGroup;
-			children = (
-				C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */,
-				C7A983301A1E7D2500FE4334 /* CoredataHelper.m */,
-			);
-			name = Coredata;
-			sourceTree = "<group>";
-		};
 		C798BC7F1A32161900532082 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,14 +207,25 @@
 		C7BFA3861A2BCC6C003871F2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				C7A9832F1A1E7D2500FE4334 /* CoredataHelper.h */,
+				C7A983301A1E7D2500FE4334 /* CoredataHelper.m */,
 				C7BFA3871A2BD56A003871F2 /* PictureDataTransformer.h */,
 				C7BFA3881A2BD56A003871F2 /* PictureDataTransformer.m */,
 				C7BFA3811A2BCBAF003871F2 /* Album.m */,
+				C7BFA3801A2BCBAF003871F2 /* Album.h */,
 				C7BFA3831A2BCBAF003871F2 /* Photo.h */,
 				C7BFA3841A2BCBAF003871F2 /* Photo.m */,
-				C7BFA3801A2BCBAF003871F2 /* Album.h */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		C7D0F9B21A325C4B00EF1940 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				C7052E3F1A1D4DA00059C9A6 /* AlbumTableViewController.h */,
+				C7052E401A1D4DA00059C9A6 /* AlbumTableViewController.m */,
+			);
+			name = Album;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +308,6 @@
 				C7DB7F011A1EF51200869922 /* Jamaica.jpg in Resources */,
 				C7052E201A1D3EB20059C9A6 /* Images.xcassets in Resources */,
 				C7052E3E1A1D40300059C9A6 /* Storyboard.storyboard in Resources */,
-				C7A983391A1E8FAD00FE4334 /* Astronaut.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
